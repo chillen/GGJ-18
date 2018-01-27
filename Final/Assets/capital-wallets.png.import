@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MapTemp.png-88a45ad319cdd07849036f96b30c0f51.stex"
+path="res://.import/capital-wallets.png-dd6d307779c096241fd571dacf4fff09.stex"
 
 [deps]
 
-source_file="res://Assets/Map/MapTemp.png"
-source_md5="73a8328e12023a1c068a2d2fb66e4fd4"
+source_file="res://Assets/capital-wallets.png"
+source_md5="d2b6fa07946728456bd522ba7df5189e"
 
-dest_files=[ "res://.import/MapTemp.png-88a45ad319cdd07849036f96b30c0f51.stex" ]
-dest_md5="973f9c7799fc2196957e722573458965"
+dest_files=[ "res://.import/capital-wallets.png-dd6d307779c096241fd571dacf4fff09.stex" ]
+dest_md5="21de4ebc608a5bf580cad0483ea4996b"
 
 [params]
 
