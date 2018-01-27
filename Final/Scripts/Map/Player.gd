@@ -7,6 +7,7 @@ extends KinematicBody2D
 func _ready():
 	self.position.x = 800
 	self.position.y = 800
+	self.add_to_group('player')
 
 func _process(delta):	
 	if Input.is_action_pressed("ui_a"):
