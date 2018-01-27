@@ -20,7 +20,7 @@ func choose_newspaper():
 	
 func get_list_newspaper():
 	# gets a list of news papers
-	return get_list_newspaper()
+	return chosen_texts
 	pass
 
 #func _process(delta):
