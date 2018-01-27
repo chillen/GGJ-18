@@ -2,6 +2,7 @@ extends Area2D
 
 export(String) var group = ""
 
+signal splash
 
 
 func _ready():
@@ -19,6 +20,7 @@ func _ready():
 
 func _on_Area_body_entered( body ):
 	if body.is_in_group(group):
+		emit_signal('splash')
 		print(str('Player has entered'))
 
 func _on_Area_body_exited(body):
