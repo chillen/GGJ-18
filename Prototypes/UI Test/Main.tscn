@@ -1,0 +1,123 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://sprites/np_template.jpg" type="Texture" id=2]
+[ext_resource path="res://fonts/Pixeled.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://plain-arrow.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 12
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 9
+use_mipmaps = true
+use_filter = true
+extra_spacing_bottom = -4
+extra_spacing_space = -1
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
+[node name="GUI_controller" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="Camera2D" type="Camera2D" parent="." index="0"]
+
+position = Vector2( 513, 299 )
+anchor_mode = 1
+rotating = false
+current = false
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+
+[node name="News" type="Node2D" parent="." index="1"]
+
+editor/display_folded = true
+
+[node name="Newspaper" type="Sprite" parent="News" index="0"]
+
+editor/display_folded = true
+modulate = Color( 0.6875, 0.659973, 0.577393, 1 )
+position = Vector2( 502.507, 271.695 )
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Animation", "Material", "Offset", "Transform", "Visibility" ]
+
+[node name="MainText" type="RichTextLabel" parent="News/Newspaper" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -171.675
+margin_top = -112.994
+margin_right = 149.325
+margin_bottom = -13.9941
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/bold_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0.0976563, 0.0976563, 0.0976563, 1 )
+bbcode_enabled = true
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = ""
+scroll_active = false
+scroll_following = true
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "Rect", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="LeftArrow" type="Sprite" parent="News" index="1"]
+
+modulate = Color( 0.488281, 0.123978, 0.123978, 1 )
+position = Vector2( 82.0218, 278.442 )
+rotation = 3.14159
+scale = Vector2( 0.2, 0.5 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+
+[node name="RightArrow" type="Sprite" parent="News" index="2"]
+
+modulate = Color( 0.488281, 0.123978, 0.123978, 1 )
+position = Vector2( 956.201, 278.442 )
+scale = Vector2( 0.2, 0.5 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+
+[node name="Missions" type="Node2D" parent="." index="2"]
+
+[node name="WayPoint" type="Node2D" parent="." index="3"]
+
+
