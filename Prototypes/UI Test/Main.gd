@@ -25,7 +25,7 @@ func _ready():
 	set_process(true)
 
 func set_text(text):
-	$News/Newspaper/MainText.bbcode_text = text
+	$News/Newspaper/MainText.bbcode_text = NewsRelatedData.get_list_newspaper() #text
 	
 func get_text():
 	return texts[active_paper]
