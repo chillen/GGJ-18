@@ -1,0 +1,135 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/NewsPaperScript.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Newspaper_Floxx.png" type="Texture" id=2]
+
+[sub_resource type="Shader" id=1]
+
+code = ""
+
+[sub_resource type="ShaderMaterial" id=2]
+
+render_priority = 0
+shader = SubResource( 1 )
+
+[node name="UI" type="Control"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+col = Color( 255, 255, 255, 1 )
+page = 0
+num_pages = 0
+header = "Place Text"
+body = "Lorum Lisp"
+
+[node name="News" type="TextureRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -27.0
+margin_top = -50.0
+margin_right = 567.0
+margin_bottom = 544.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 0
+
+[node name="Body" type="Label" parent="." index="1"]
+
+modulate = Color( 0.414063, 0.414063, 0.414063, 1 )
+material = SubResource( 2 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 275.0
+margin_top = 115.0
+margin_right = 514.0
+margin_bottom = 480.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 0.253906, 0.253906, 0.253906, 1 )
+custom_constants/line_spacing = -1
+text = "In mollis ante ut accumsan mollis. Donec aliquam congue ornare. Morbi dictum, turpis ornare fringilla efficitur, dui eros faucibus dolor, ac laoreet libero nunc eu libero. Sed sit amet facilisis nisl. Donec elit ante, egestas eu condimentum quis, aliquet ut nisi. In varius semper augue, id faucibus risus dapibus eu. Donec auctor tempus purus ut mollis. Etiam posuere eleifend elit ac egestas. Sed pharetra nisi ex, eget ultricies magna vulputate vitae. Phasellus consectetur ipsum mauris, non ultricies mauris sagittis eget. Ut at bibendum felis. Pellentesque non lectus accumsan, mattis massa eget, scelerisque enim. Pellentesque varius, tellus sit amet faucibus ornare, ante orci efficitur leo, ac gravida turpis lorem ut dui. Aenean quis purus urna. Nullam quis libero non mauris vulputate auctor sit amet non magna."
+autowrap = true
+clip_text = true
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+[node name="Page" type="Label" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 405.0
+margin_top = 91.0
+margin_right = 458.0
+margin_bottom = 108.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 0.253906, 0.253906, 0.253906, 1 )
+custom_constants/line_spacing = -1
+text = "10/10"
+align = 2
+clip_text = true
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+[node name="Header" type="Label" parent="." index="3"]
+
+modulate = Color( 0.414063, 0.414063, 0.414063, 1 )
+material = SubResource( 2 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 113.0
+margin_top = 89.0
+margin_right = 312.0
+margin_bottom = 107.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 0.253906, 0.253906, 0.253906, 1 )
+custom_constants/line_spacing = -1
+text = "HEADER"
+align = 1
+autowrap = true
+clip_text = true
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+
