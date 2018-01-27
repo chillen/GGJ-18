@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Scenes/Paper.tscn" type="PackedScene" id=1]
 
-
 [sub_resource type="GDScript" id=1]
 
 script/source = "extends Control
@@ -23,7 +22,7 @@ func _ready():
 #	pass
 "
 
-[node name="UI" type="Control"]
+[node name="UI" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -37,5 +36,10 @@ size_flags_vertical = 1
 script = SubResource( 1 )
 
 [node name="UI" parent="." index="0" instance=ExtResource( 1 )]
+
+margin_left = 17.0
+margin_top = 439.0
+margin_right = 17.0
+margin_bottom = 439.0
 
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/plain-arrow.png-b47fdd1d3eed2debb00c7ac72f6e5c92.stex"
+path="res://.import/fantasy_map_1517068423578.png-56b5d360c86a48b16d31a465ea36e302.stex"
 
 [deps]
 
-source_file="res://Sprites/plain-arrow.png"
-source_md5="e1d4aa633f1f8f41fc764ee7363ab516"
+source_file="res://Assets/fantasy_map_1517068423578.png"
+source_md5="d2150100ac543924edc6611d24cc274d"
 
-dest_files=[ "res://.import/plain-arrow.png-b47fdd1d3eed2debb00c7ac72f6e5c92.stex" ]
-dest_md5="5f46df34b2406d9c6a51df35573f21eb"
+dest_files=[ "res://.import/fantasy_map_1517068423578.png-56b5d360c86a48b16d31a465ea36e302.stex" ]
+dest_md5="a875daea638fe89652461a46c2c6e75a"
 
 [params]
 
