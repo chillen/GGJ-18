@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://NewsPaper.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/NewPaper.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Paper.tscn" type="PackedScene" id=3]
+
 
 [node name="Root" type="Node"]
 
@@ -41,5 +43,11 @@ expand = true
 stretch_mode = 0
 
 [node name="UI" parent="." index="2" instance=ExtResource( 2 )]
+
+visible = false
+
+[node name="UI2" parent="." index="3" instance=ExtResource( 3 )]
+
+col = Color( 0.714844, 0.309952, 0.309952, 1 )
 
 
