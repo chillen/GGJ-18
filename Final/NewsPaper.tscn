@@ -1,0 +1,105 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/np_template.jpg" type="Texture" id=1]
+[ext_resource path="res://Sprites/plain-arrow.png" type="Texture" id=2]
+
+[node name="UI" type="Control"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="News" type="TextureRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 213.0
+margin_top = 4.0
+margin_right = 807.0
+margin_bottom = 598.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 0
+
+[node name="RightArrow" type="TextureRect" parent="." index="1"]
+
+modulate = Color( 0.480469, 0.155777, 0.155777, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 843.0
+margin_top = 222.0
+margin_right = 1023.0
+margin_bottom = 402.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 0
+
+[node name="LeftArrow" type="TextureRect" parent="." index="2"]
+
+modulate = Color( 0.480469, 0.155777, 0.155777, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 191.0
+margin_top = 407.0
+margin_right = 371.0
+margin_bottom = 587.0
+rect_rotation = 180.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 0
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility" ]
+
+[node name="Label" type="Label" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 367.0
+margin_top = 150.0
+margin_right = 644.0
+margin_bottom = 298.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 0.253906, 0.253906, 0.253906, 1 )
+custom_constants/line_spacing = -1
+text = "In mollis ante ut accumsan mollis. Donec aliquam congue ornare. Morbi dictum, turpis ornare fringilla efficitur, dui eros faucibus dolor, ac laoreet libero nunc eu libero. Sed sit amet facilisis nisl. Donec elit ante, egestas eu condimentum quis, aliquet ut nisi. In varius semper augue, id faucibus risus dapibus eu. Donec auctor tempus purus ut mollis. Etiam posuere eleifend elit ac egestas. Sed pharetra nisi ex, eget ultricies magna vulputate vitae. Phasellus consectetur ipsum mauris, non ultricies mauris sagittis eget. Ut at bibendum felis. Pellentesque non lectus accumsan, mattis massa eget, scelerisque enim. Pellentesque varius, tellus sit amet faucibus ornare, ante orci efficitur leo, ac gravida turpis lorem ut dui. Aenean quis purus urna. Nullam quis libero non mauris vulputate auctor sit amet non magna."
+autowrap = true
+clip_text = true
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+

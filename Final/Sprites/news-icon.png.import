@@ -2,14 +2,14 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/news-icon.png-f8a0174c5c3a724feeb0041deb39d1a6.stex"
+path="res://.import/news-icon.png-98ff7b73b499fa6eea5da60863f0c4ee.stex"
 
 [deps]
 
-source_file="res://sprites/news-icon.png"
+source_file="res://Sprites/news-icon.png"
 source_md5="5798945ff1c03cabed64483a169ea5b9"
 
-dest_files=[ "res://.import/news-icon.png-f8a0174c5c3a724feeb0041deb39d1a6.stex" ]
+dest_files=[ "res://.import/news-icon.png-98ff7b73b499fa6eea5da60863f0c4ee.stex" ]
 dest_md5="6d5cfdd10b29590c930afd26a49d02ec"
 
 [params]
