@@ -1,6 +1,5 @@
 [gd_scene load_steps=8 format=2]
 
-<<<<<<< HEAD
 [ext_resource path="res://Scripts/Flying.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Map/city.jpg" type="Texture" id=2]
 [ext_resource path="res://Scenes/Map/Player.tscn" type="PackedScene" id=3]
