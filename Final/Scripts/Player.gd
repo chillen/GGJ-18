@@ -50,6 +50,7 @@ func _process(delta):
 	player_velocity.x = (cos(self.rotation - 1.57)) * velocity_multiplier * delta * 250
 	player_velocity.y = (sin(self.rotation - 1.57)) * velocity_multiplier * delta * 250
 	
+
 	self.position.x += player_velocity.x
 	self.position.y += player_velocity.y
 	

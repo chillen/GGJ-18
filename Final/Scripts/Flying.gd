@@ -8,6 +8,7 @@ var missions = []
 var mission_nodes = []
 var point_class = preload('res://Scenes/Point.tscn')
 var splatter_class = preload('res://Scenes/Splatter.tscn')
+var package_class = preload('res://Scenes/ThePackage.tscn')
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -34,6 +35,10 @@ func _process(delta):
 	if Input.is_action_just_pressed('ui_select'):
 		var worked = GameController.decrease_ammo()
 		if worked:
-			var splatter = splatter_class.instance()
-			add_child(splatter)
-			splatter.position = $Player.position
+			var package = package_class.instance()
+			package.position = $Player.position
+			package.velocity = $Player.player_velocity
+			add_child(package)
+			#var splatter = splatter_class.instance()
+			#add_child(splatter)
+			#splatter.position = $Player.position

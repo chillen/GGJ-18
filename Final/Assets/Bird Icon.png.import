@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Bird Icon.png-a7e51c49f9e2bd241b535b3ba9fc9fe1.stex"
+
+[deps]
+
+source_file="res://Assets/Bird Icon.png"
+source_md5="41b89de58cf25699ebcdda6f74b0154b"
+
+dest_files=[ "res://.import/Bird Icon.png-a7e51c49f9e2bd241b535b3ba9fc9fe1.stex" ]
+dest_md5="8f27040624c4f3899301d5c39bc72c75"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
