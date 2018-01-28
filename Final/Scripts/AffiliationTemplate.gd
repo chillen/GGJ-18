@@ -8,6 +8,9 @@ export(int) var mission_id
 func _ready():
 	$Splash/Area.mission_id = mission_id
 
+func set_sprite(texture):
+	$Sprite.texture = texture
+
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.

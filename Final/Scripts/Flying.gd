@@ -6,7 +6,7 @@ extends Node
 
 var missions = []
 var mission_nodes = []
-var point_class = preload('res://Scenes/Point.tscn')
+var point_class = preload('res://Scenes/AffiliationTemplate.tscn')
 var splatter_class = preload('res://Scenes/Splatter.tscn')
 var package_class = preload('res://Scenes/ThePackage.tscn')
 var timer = null
@@ -14,18 +14,17 @@ var timer = null
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	self.missions = GameController.get_papers()
+	self.missions = MissionData.get_todays_missions()
 	
-#	for index in missions:
-#		var mission_data = GameController.get_paper(index)
-#		var title = mission_data.text.title
-#		var location = mission_data.mission.loc
-#
-#		var point = point_class.instance()
-#		point.set_data(title, id, location, preload('res://Assets/ParkBenchIcon.png'))
-#		add_child(point)
-#		move_child(point, 2)
-	move_child($Points, 2)
+	for mission in missions:
+		var point = point_class.instance()
+		point.position.x = mission.x
+		point.position.y = mission.y
+		point.set_sprite(mission.icon)
+
+		add_child(point)
+		# move_child(point, 2)
+	# move_child($Points, 2)
 	set_process(true)	
 	GameController.connect('end_level', self, '_end_level')
 	$Canvas/BlackFaderAll.fadeIn()

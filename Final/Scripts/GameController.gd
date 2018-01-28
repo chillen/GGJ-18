@@ -211,7 +211,7 @@ func flying_state():
 		self.level_timer = Timer.new()
 		self.level_timer.connect("timeout",self,"_end_level") 
 		add_child(self.level_timer)
-		self.level_timer.wait_time = 10
+		self.level_timer.wait_time = 45
 		self.level_timer.start()
 	if active_state == FLYING:
 		update_leader_message()

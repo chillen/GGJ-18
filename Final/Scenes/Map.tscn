@@ -1,14 +1,13 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Flying.gd" type="Script" id=1]
 [ext_resource path="res://Assets/MapBeige.png" type="Texture" id=2]
 [ext_resource path="res://Assets/MapRed.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/AffiliationTemplate.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Fonts/Pixeled.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://Scenes/BlackFader.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Fonts/snowstorm/Snowstorm.otf" type="DynamicFontData" id=8]
-[ext_resource path="res://Assets/StalinPidgeon_Neutral.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Fonts/Pixeled.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Scenes/BlackFader.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Fonts/snowstorm/Snowstorm.otf" type="DynamicFontData" id=7]
+[ext_resource path="res://Assets/StalinPidgeon_Neutral.png" type="Texture" id=8]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -21,7 +20,7 @@ light_mode = 2
 size = 18
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 6 )
+font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=3]
@@ -29,7 +28,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 64
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 8 )
+font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="Root" type="Node" index="0"]
@@ -64,12 +63,7 @@ _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 position = Vector2( 961.773, 544.044 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Affiliation" parent="Points" index="0" instance=ExtResource( 4 )]
-
-position = Vector2( -9.28784, -394.072 )
-scale = Vector2( 1, 1 )
-
-[node name="Player" parent="." index="3" instance=ExtResource( 5 )]
+[node name="Player" parent="." index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 967.912, 747.849 )
 scale = Vector2( 0.5, 0.5 )
@@ -148,7 +142,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "custom_colors", "custom_fonts" ]
 
-[node name="BlackFader" parent="Canvas" index="3" instance=ExtResource( 7 )]
+[node name="BlackFader" parent="Canvas" index="3" instance=ExtResource( 6 )]
 
 [node name="SupremeLabel" type="Label" parent="Canvas" index="4"]
 
@@ -191,11 +185,11 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
 stretch_mode = 0
 _sections_unfolded = [ "Material", "Rect", "Visibility" ]
 
-[node name="BlackFaderAll" parent="Canvas" index="6" instance=ExtResource( 7 )]
+[node name="BlackFaderAll" parent="Canvas" index="6" instance=ExtResource( 6 )]
 
 start_black = true
 
