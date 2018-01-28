@@ -10,6 +10,13 @@ var paper_data = [
 	{'text': {'title': 'UNREGISTERED HYPERCAM', 'content': '2006 Youtube at its finest'}, 'mission': { 'loc': [200, 300], 'stats': {'suspicion': .1, 'support': .8, 'unrest': .2 } }}	
 ]
 
+var leader_messages = {
+	'positive': 'Continue the good work, birdrov',
+	'negative': 'There will be consequences, birdrov',
+	'go_back': 'Turn back, birdrov',
+	'tut1': 'Press <SPACE> to deliver the first package, birdrov'
+}
+
 enum STATES {START_DAY, DAY, START_TITLE, TITLE, STOP_TITLE, START_FLYING,FLYING,END_FLYING, START_READING, READING, END_READING, START_MISSIONS, MISSIONS, END_MISSION, START_WAYPOINT, WAYPOINT, END_WAYPOINT}
 var selected_paper = 0	
 var on_continue = false
@@ -23,6 +30,7 @@ var current_scene = null
 var days_remaining = 7
 var timer = null
 var ammo = 7
+var current_leader_message = 'tut1'
 
 
 func _ready():
@@ -103,6 +111,9 @@ func decrease_ammo():
 		return false
 	self.ammo -= 1
 	return true
+
+func get_leader_message():
+	return leader_messages[self.current_leader_message]
 	
 	
 #############################################################################
