@@ -14,6 +14,7 @@ func _ready():
 	$Anime.play('Fall')
 	#$Anime.
 	#splat()
+	add_to_group('splash')
 	set_physics_process(true)
 	#$Anime.connect('animation_finished',self,'splat')
 	pass
