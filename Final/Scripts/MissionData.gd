@@ -52,6 +52,15 @@ var night_texts = [
 ]
 ]
 
+var leader_text = [
+	[
+	    ['Hello Comrade! Welcome!', 4],
+		['I can change text!', 3],
+		['This one doesnt work', 2],
+		['Wow!', 2]
+	],
+]
+
 var current_day = 1
 var ending_started = false
 var ending = 'neither'
@@ -79,8 +88,11 @@ func get_todays_missions():
 func get_tonights_papers():
     return night_texts[current_day - 1]
 
-func run_day():
-    pass
+func run_day(day_num):
+	pass
+		
+func get_day_texts():
+	return leader_text[current_day - 1]
 
 func day_one():
     pass

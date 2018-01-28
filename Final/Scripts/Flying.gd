@@ -17,6 +17,11 @@ func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	self.missions = MissionData.get_todays_missions()
+	var supreme_texts = MissionData.get_day_texts()
+	
+	for text in supreme_texts:
+		print(text)
+		$Canvas/SupremeLeader.queue_message(text[0], text[1])
 	
 	for mission in missions:
 		var point = point_class.instance()
