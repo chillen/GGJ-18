@@ -8,6 +8,7 @@ var player_velocity = Vector2(0, 0)
 
 export(float,0,10,0.5) var temp_speed = 5
 var max_box = {}
+var flapping = true
 
 func _ready():
 	self.position.x = 800
@@ -26,6 +27,8 @@ func _ready():
 	$Camera.limit_top = self.max_box.miny*3
 	$Camera.limit_right = self.max_box.maxx*3
 	$Camera.limit_bottom = self.max_box.maxy*3
+	
+
 
 func _physics_process(delta):
 	if turn_velocity > 0:
@@ -35,8 +38,18 @@ func _physics_process(delta):
 		
 	if Input.is_action_pressed("ui_a"):
 		turn_velocity -= 1.4 * delta
-	if Input.is_action_pressed("ui_d"):
+		if flapping:
+			flapping = false
+			$AnimationPlayer.play('Soaring')
+	elif Input.is_action_pressed("ui_d"):
 		turn_velocity += 1.4 * delta
+		if flapping:
+			flapping = false
+			$AnimationPlayer.play('Soaring')
+	else:
+		if not flapping:
+			flapping = true
+			$AnimationPlayer.play('Flapping')
 	
 	if turn_velocity > max_turn_speed:
 		turn_velocity = max_turn_speed
