@@ -12,10 +12,10 @@ func _ready():
 	# Initialization here
 	pass
 	
-func set_data(name, location, sprite):
+func set_data(name1, location, sprite):
 	self.sprite = sprite
 	self.location = location
-	self.loc_name = name
+	self.loc_name = name1
 	
 	position.x = location[0]
 	position.y = location[1]
