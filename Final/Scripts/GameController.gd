@@ -33,6 +33,11 @@ var timer = null
 var ammo = 7
 var current_leader_message = 'tut1'
 var zone_counts = {'safe': 0, 'danger': 0, 'splash': 0}
+var leader_sprites = {
+	'kawaii': preload('res://Assets/StalinPidgeon_Kawaii.png'),
+	'dontfuckup': preload('res://Assets/StalinPidgeon_DontFuckUpComrade.png'),
+	'neutral': preload('res://Assets/StalinPidgeon_Neutral.png')
+}
 
 
 func _ready():
@@ -118,14 +123,20 @@ func get_leader_message():
 	return leader_messages[self.current_leader_message]
 
 func update_leader_message():
-	if zone_counts['splash'] > 0:
-		current_leader_message = 'splash'
-	elif zone_counts['safe'] > 0:
-		current_leader_message = 'safe'
-	elif zone_counts['danger'] > 0:
-		current_leader_message = 'danger'
-	else:
-		current_leader_message = 'failed'	
+	print(current_scene)
+	#var leader_image = current_scene.get_node('Canvas').get_node('SupremeLeader')
+#	if zone_counts['splash'] > 0:
+#		current_leader_message = 'splash'
+#		current_scene.get_node('/Canvas/SupremeLeader').texture = leader_sprites['kawaii']
+#	elif zone_counts['safe'] > 0:
+#		current_leader_message = 'safe'
+#		current_scene.get_node('/Canvas/SupremeLeader').texture = leader_sprites['neutral']
+#	elif zone_counts['danger'] > 0:
+#		current_leader_message = 'danger'
+#		current_scene.get_node('/Canvas/SupremeLeader').texture = leader_sprites['dontfuckup']
+#	else:
+#		current_leader_message = 'failed'	
+#		current_scene.get_node('/Canvas/SupremeLeader').texture = leader_sprites['dontfuckup']
 	
 func increase_zone(zone):
 	self.zone_counts[zone] += 1
