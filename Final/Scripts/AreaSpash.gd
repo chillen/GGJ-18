@@ -21,8 +21,8 @@ func _ready():
 func _on_Area_body_entered( body ):
 	if body.is_in_group(group):
 		emit_signal('splash')
-		print(str('Player has entered'))
+		GameController.increase_zone('splash')
 
 func _on_Area_body_exited(body):
 	if body.is_in_group(group):
-		print(str('Player has left'))
+		GameController.decrease_zone('splash')

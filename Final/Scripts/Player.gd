@@ -28,7 +28,6 @@ func _ready():
 	$Camera.limit_bottom = self.max_box.maxy*3
 
 func _process(delta):
-	#print(turn_velocity)
 	if turn_velocity > 0:
 		turn_velocity -= min(0.4 * delta, turn_velocity)
 	elif turn_velocity < 0:
@@ -51,12 +50,10 @@ func _process(delta):
 	player_velocity.x = (cos(self.rotation - 1.57)) * velocity_multiplier * delta * 250
 	player_velocity.y = (sin(self.rotation - 1.57)) * velocity_multiplier * delta * 250
 	
-	#print(player_velocity.x)
-	
+
 	self.position.x += player_velocity.x
 	self.position.y += player_velocity.y
 	
-	#Simple border control
 	if (self.position.x < -2900 or self.position.x > 2900 or self.position.y < -1900 or self.position.y > 1900):
 		self.position.x -= (cos(self.rotation - 1.57) * 4) * velocity_multiplier * delta
 		self.position.y -= (sin(self.rotation - 1.57) * 4) * velocity_multiplier * delta

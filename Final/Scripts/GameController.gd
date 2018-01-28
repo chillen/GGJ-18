@@ -11,9 +11,10 @@ var paper_data = [
 ]
 
 var leader_messages = {
-	'positive': 'Continue the good work, birdrov',
-	'negative': 'There will be consequences, birdrov',
-	'go_back': 'Turn back, birdrov',
+	'splash': 'Here birdrov! Drop the package!',
+	'safe': 'The delivery is indeed near, birdrov, but do not stray away',
+	'danger': 'Turn back, birdrov, there is no friends there',
+	'failed': 'I am disappointed you have strayed, birdov',
 	'tut1': 'Press <SPACE> to deliver the first package, birdrov'
 }
 
@@ -31,6 +32,7 @@ var days_remaining = 7
 var timer = null
 var ammo = 7
 var current_leader_message = 'tut1'
+var zone_counts = {'safe': 0, 'danger': 0, 'splash': 0}
 
 
 func _ready():
@@ -114,8 +116,23 @@ func decrease_ammo():
 
 func get_leader_message():
 	return leader_messages[self.current_leader_message]
+
+func update_leader_message():
+	if zone_counts['splash'] > 0:
+		current_leader_message = 'splash'
+	elif zone_counts['safe'] > 0:
+		current_leader_message = 'safe'
+	elif zone_counts['danger'] > 0:
+		current_leader_message = 'danger'
+	else:
+		current_leader_message = 'failed'	
 	
-	
+func increase_zone(zone):
+	self.zone_counts[zone] += 1
+
+func decrease_zone(zone):
+	self.zone_counts[zone] -= 1
+
 #############################################################################
 ## 	STATES
 #############################################################################
@@ -162,6 +179,7 @@ func flying_state():
 		goto_scene("res://Scenes/Map.tscn")
 		self.active_state = FLYING
 		self.ammo = 7
+	update_leader_message()
 	
 func reading_state():
 	return

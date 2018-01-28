@@ -69,9 +69,9 @@ scale = Vector2( 1, 1 )
 
 [node name="Player" parent="." index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 961.773, 544.044 )
+position = Vector2( 967.912, 747.849 )
 scale = Vector2( 0.5, 0.5 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
 
 [node name="Canvas" type="CanvasLayer" parent="." index="4"]
 
