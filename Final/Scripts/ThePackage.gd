@@ -28,6 +28,7 @@ func _physics_process(delta):
 
 func splat():
 	var splatter = splatter_class.instance()
+	# NEVER DO THIS INTENTIONALLY
 	get_tree().root.add_child(splatter)
 	splatter.position = self.position
 	self.queue_free()

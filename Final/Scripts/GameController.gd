@@ -225,9 +225,12 @@ func reading_state():
 		self.active_state = READING
 
 func done_reading():
-	change_state(START_DAY,'day_state')
-	#days_remaining -= 1
-	MissionData.next_day()\
+	if active_state == READING:
+		self.active_state = END_READING
+		change_state(START_DAY,'day_state')
+		#days_remaining -= 1
+		print('done_reading')
+		print(MissionData.next_day())
 	
 func planning_state():
 	return
