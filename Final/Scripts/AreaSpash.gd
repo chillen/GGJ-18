@@ -6,6 +6,8 @@ var splatter_class = preload('res://Scenes/Splatter.tscn')
 
 signal splash
 
+var mission_id
+
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -26,7 +28,7 @@ func _on_Area_body_entered( body ):
 		GameController.increase_zone('splash')
 	if body.is_in_group(group_2):
 		splat()
-		pass
+		GameController.complete_mission(mission_id)
 
 func _on_Area_body_exited(body):
 	if body.is_in_group(group_1):

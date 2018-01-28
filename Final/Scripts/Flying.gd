@@ -52,6 +52,7 @@ func _process(delta):
 			package.position = $Player.position
 			package.velocity = $Player.player_velocity
 			add_child(package)
+			GameController.add_package_location(package.position)
 			#var splatter = splatter_class.instance()
 			#add_child(splatter)
 			#splatter.position = $Player.position

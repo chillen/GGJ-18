@@ -43,6 +43,9 @@ var leader_sprites = {
 var current_leader_image = 'neutral'
 var level_timer = null
 
+var package_locations = []
+var completed_missions = []
+
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
@@ -150,6 +153,12 @@ func decrease_zone(zone):
 	
 func get_level_time():
 	return self.level_timer.time_left
+	
+func add_package_location(location):
+	package_locations.append(location)
+	
+func complete_mission(id):
+	completed_missions.append(id)
 
 #############################################################################
 ## 	STATES
@@ -196,6 +205,7 @@ func _end_level():
 	self.level_timer.stop()
 	emit_signal('end_level')
 	print('Level over')
+	print(completed_missions)
 	
 func flying_state():
 	if active_state == START_FLYING:
