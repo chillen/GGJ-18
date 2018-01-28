@@ -1,0 +1,239 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/Ending.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Flag.png" type="Texture" id=2]
+[ext_resource path="res://Assets/StalinPidgeon_Kawaii.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/snowstorm/Snowstorm.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/MapHR_Beige.png" type="Texture" id=5]
+[ext_resource path="res://Assets/CapitalistPigsWin.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/BlackFader.tscn" type="PackedScene" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 64
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 32
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "Roll"
+length = 15.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Credits:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.1, 3.3, 7, 10.7, 14.4, 14.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Art: Moriah Whelan-Ellis", "Art: Moriah Whelan-Ellis", "Programming: Christopher Blackman", "Programming: Connor Hillen", "Programming: Forest Anderson", "Programming: Christopher Blackman", "Art: Moriah Whelan-Ellis" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Credits:custom_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3.3, 5, 7, 8.7, 10.7, 12.4, 14.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="Ending" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="Canvas" type="CanvasLayer" parent="." index="0"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="RedWin" type="Node2D" parent="Canvas" index="0"]
+
+visible = false
+_sections_unfolded = [ "Visibility" ]
+
+[node name="TextureRect" type="TextureRect" parent="Canvas/RedWin" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1.18103
+margin_top = -0.624939
+margin_right = 1918.82
+margin_bottom = 1079.38
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+stretch_mode = 0
+_sections_unfolded = [ "Material", "Rect", "Visibility" ]
+
+[node name="Sprite" type="Sprite" parent="Canvas/RedWin" index="1"]
+
+position = Vector2( 1697.66, 811.301 )
+scale = Vector2( 1.44214, 1.44214 )
+z_index = 1
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="Label" type="Label" parent="Canvas/RedWin" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 139.0
+margin_top = 77.0
+margin_right = 1786.0
+margin_bottom = 129.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Well done, birdrav. Our message is heard throughout the land."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="BlueWin" type="Node2D" parent="Canvas" index="1"]
+
+visible = false
+_sections_unfolded = [ "Visibility" ]
+
+[node name="TextureRect" type="TextureRect" parent="Canvas/BlueWin" index="0"]
+
+modulate = Color( 0.503235, 0.525113, 0.757813, 1 )
+self_modulate = Color( 0.961517, 1, 0.949219, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -31.0
+margin_top = -124.0
+margin_right = 7970.0
+margin_bottom = 4376.0
+rect_scale = Vector2( 0.3, 0.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 5 )
+stretch_mode = 0
+_sections_unfolded = [ "Material", "Rect", "Visibility" ]
+
+[node name="Sprite" type="Sprite" parent="Canvas/BlueWin" index="1"]
+
+position = Vector2( 959.358, 476.52 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="ColorRect" type="ColorRect" parent="Canvas/BlueWin" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -22.0
+margin_top = 974.0
+margin_right = 573.0
+margin_bottom = 1064.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.292603, 0.3753, 0.550781, 1 )
+
+[node name="Label2" type="Label" parent="Canvas/BlueWin" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4.0
+margin_top = 33.0
+margin_right = 1910.0
+margin_bottom = 140.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "It seems the capitalist pigs spread word better than you could, birdrav."
+align = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Credits" type="Node2D" parent="Canvas" index="2"]
+
+[node name="Credits" type="Label" parent="Canvas/Credits" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 43.0
+margin_top = 1008.0
+margin_right = 317.0
+margin_bottom = 1034.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 0.856235 )
+text = "Programming: Christopher Blackman"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Canvas/Credits" index="1"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Roll = SubResource( 3 )
+blend_times = [  ]
+autoplay = ""
+
+[node name="BlackFader" parent="Canvas" index="3" instance=ExtResource( 7 )]
+
+start_black = true
+
+
