@@ -9,6 +9,7 @@ var mission_nodes = []
 var point_class = preload('res://Scenes/Point.tscn')
 var splatter_class = preload('res://Scenes/Splatter.tscn')
 var package_class = preload('res://Scenes/ThePackage.tscn')
+var timer = null
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -27,10 +28,21 @@ func _ready():
 	move_child($Points, 2)
 	set_process(true)	
 	GameController.connect('end_level', self, '_end_level')
+	$Canvas/BlackFaderAll.fadeIn()
 	
 func _end_level():
-	print('Fade please')
+	# ANY BIRD WORDS GO HERE
 	$Canvas/BlackFader.fadeOut()
+	self.timer = Timer.new()
+	self.timer.wait_time = 6
+	add_child(self.timer)
+	self.timer.connect('timeout', self, '_end_level_complete')
+	self.timer.start()
+	
+func _end_level_complete():
+	self.timer.stop()
+	GameController._leave_level()
+	print('done.')
 	
 func _process(delta):
 	$Canvas/AmmoLabel.text = 'Deliveries Available: %s' % GameController.get_ammo()

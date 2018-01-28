@@ -190,22 +190,18 @@ func day_state():
 	if active_state == START_DAY:
 		goto_scene("res://Scenes/DaysRemaining.tscn")
 		self.active_state = DAY
-
-		self.timer = Timer.new()
-		timer.wait_time = 1
-		timer.connect("timeout",self,"_end_timeout") 
-		add_child(timer) #to process
-		timer.start() #to start
 		
-func _end_timeout():
+func days_remaining_end():
+	self.active_state = START_FLYING
 	change_state(START_FLYING, 'flying_state')
-	self.timer.stop()
 	
 func _end_level():
 	self.level_timer.stop()
 	emit_signal('end_level')
-	print('Level over')
-	print(completed_missions)
+	self.active_state = END_FLYING
+
+func _leave_level():
+	change_state(START_READING, 'reading_state')
 	
 func flying_state():
 	if active_state == START_FLYING:
@@ -217,13 +213,16 @@ func flying_state():
 		add_child(self.level_timer)
 		self.level_timer.wait_time = 10
 		self.level_timer.start()
-	update_leader_message()
-	if self.ammo == 0:
-		_end_level()
+	if active_state == FLYING:
+		update_leader_message()
+		if self.ammo == 0:
+			_end_level()
 
 	
 func reading_state():
-	return
+	if active_state == START_READING:
+		goto_scene("res://Scenes/Reading.tscn")
+		self.active_state = READING
 
 func planning_state():
 	return

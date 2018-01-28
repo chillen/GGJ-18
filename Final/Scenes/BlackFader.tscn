@@ -5,7 +5,7 @@
 [sub_resource type="Animation" id=1]
 
 resource_name = "fadeIn"
-length = 3.0
+length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -15,7 +15,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 3 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
@@ -24,7 +24,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=2]
 
 resource_name = "fadeOut"
-length = 3.0
+length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -34,7 +34,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 3 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
@@ -44,6 +44,7 @@ tracks/0/keys = {
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Rect", "Transform" ]
+start_black = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 
