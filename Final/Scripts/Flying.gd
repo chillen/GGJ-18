@@ -69,3 +69,6 @@ func _process(delta):
 			#var splatter = splatter_class.instance()
 			#add_child(splatter)
 			#splatter.position = $Player.position
+
+func _exit_tree():
+	self.queue_free()

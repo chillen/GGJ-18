@@ -1,9 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/NewsPaperScript.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Newspaper_Local.png" type="Texture" id=2]
-[ext_resource path="res://Assets/White.png" type="Texture" id=3]
-
 
 [sub_resource type="Shader" id=1]
 
@@ -51,7 +49,7 @@ texture = ExtResource( 2 )
 expand = true
 stretch_mode = 0
 
-[node name="BackgroundBody" type="TextureRect" parent="." index="1"]
+[node name="BackgroundBody" type="ColorRect" parent="." index="1"]
 
 modulate = Color( 0.815686, 0.772549, 0.772549, 1 )
 anchor_left = 0.0
@@ -67,10 +65,9 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
-expand = true
+color = Color( 1, 1, 1, 1 )
 
-[node name="BackgroundHeader" type="TextureRect" parent="." index="2"]
+[node name="BackgroundHeader" type="ColorRect" parent="." index="2"]
 
 modulate = Color( 0.815686, 0.772549, 0.772549, 1 )
 anchor_left = 0.0
@@ -86,10 +83,9 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
-expand = true
+color = Color( 1, 1, 1, 1 )
 
-[node name="BackgroundPage" type="TextureRect" parent="." index="3"]
+[node name="BackgroundPage" type="ColorRect" parent="." index="3"]
 
 modulate = Color( 0.815686, 0.772549, 0.772549, 1 )
 anchor_left = 0.0
@@ -105,8 +101,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
-expand = true
+color = Color( 1, 1, 1, 1 )
 
 [node name="Body" type="Label" parent="." index="4"]
 

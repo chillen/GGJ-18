@@ -224,6 +224,14 @@ func reading_state():
 		goto_scene("res://Scenes/Reading.tscn")
 		self.active_state = READING
 
+func done_reading():
+	if active_state == READING:
+		self.active_state = END_READING
+		change_state(START_DAY,'day_state')
+		#days_remaining -= 1
+		print('done_reading')
+		print(MissionData.next_day())
+	
 func planning_state():
 	return
 	

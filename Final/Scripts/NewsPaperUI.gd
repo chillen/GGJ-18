@@ -60,13 +60,17 @@ func _process(delta):
 	if Input.is_action_just_pressed('ui_right'):
 		print("right")
 		active_paper += 1
-		renew_papers()
+		if active_paper < len(texts):
+			renew_papers()
 		pass
 		#next_paper()
 	if Input.is_action_just_pressed('ui_left'):
 		print('left')
 		pass
 		#prev_paper()
+	if active_paper == len(texts):
+		print('loop condition')
+		GameController.done_reading()
 		
 		
 	
