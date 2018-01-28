@@ -1,9 +1,5 @@
 extends Node
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-
 var missions = []
 var mission_nodes = []
 var point_class = preload('res://Scenes/AffiliationTemplate.tscn')
@@ -13,6 +9,10 @@ var timer = null
 
 func _ready():
 	$Player.map_size = get_node('Mapmap').texture.get_size() * get_node('Mapmap').transform.get_scale()
+	
+	#Sample queue up message for supreme leader
+	#Message first, then amount of seconds to stay up
+	#$Canvas/SupremeLeader.queue_message("TEST", 3)
 	
 	# Called every time the node is added to the scene.
 	# Initialization here
@@ -25,8 +25,7 @@ func _ready():
 		point.set_sprite(mission.icon)
 
 		add_child(point)
-		# move_child(point, 2)
-	# move_child($Points, 2)
+		
 	set_process(true)	
 	GameController.connect('end_level', self, '_end_level')
 	$Canvas/BlackFaderAll.fadeIn()
@@ -47,16 +46,7 @@ func _end_level_complete():
 	
 func _process(delta):
 	$Canvas/AmmoLabel.text = 'Deliveries Available: %s' % GameController.get_ammo()
-	$Canvas/TimerLabel.text = 'Till Dusk: %02ds' % GameController.get_level_time()
-	$Canvas/SupremeLeader.texture = GameController.get_leader_image()
-	
-	if GameController.get_leader_message():
-		$Canvas/SupremeLabel.text = '"%s"' % GameController.get_leader_message()
-		$Canvas/ColorRect.visible = true	
-	else:
-		$Canvas/SupremeLabel.text = ''
-		$Canvas/ColorRect.visible = false	
-	
+	$Canvas/TimerLabel.text = 'Till Dusk: %02ds' % GameController.get_level_time()	
 
 	if Input.is_action_just_pressed('ui_select'):
 		var worked = GameController.decrease_ammo()
@@ -66,9 +56,6 @@ func _process(delta):
 			package.velocity = $Player.player_velocity
 			add_child(package)
 			GameController.add_package_location(package.position)
-			#var splatter = splatter_class.instance()
-			#add_child(splatter)
-			#splatter.position = $Player.position
 
 func _exit_tree():
 	self.queue_free()
