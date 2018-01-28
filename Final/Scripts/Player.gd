@@ -3,6 +3,7 @@ extends KinematicBody2D
 var turn_velocity = 0
 var velocity_multiplier = 3
 var base_speed = 0.1
+export(float,0,10,0.5) var temp_speed = 5
 
 func _ready():
 	self.position.x = 800
@@ -28,8 +29,6 @@ func _process(delta):
 	velocity_multiplier = 1 - pow(0.05 - abs(turn_velocity), 2)
 	
 	self.rotation += turn_velocity
-	
-	print(velocity_multiplier)
-	
-	self.position.x += cos(self.rotation - 1.57) * velocity_multiplier
-	self.position.y += sin(self.rotation - 1.57) * velocity_multiplier
+		
+	self.position.x += cos(self.rotation - 1.57) * temp_speed
+	self.position.y += sin(self.rotation - 1.57) * temp_speed

@@ -22,7 +22,7 @@ func _ready():
 		var point = point_class.instance()
 		point.set_data(title, location, preload('res://Assets/ParkBenchIcon.png'))
 		add_child(point)
-		move_child(point, 3)
+		move_child(point, 2)
 		
 	set_process(true)	
 	
