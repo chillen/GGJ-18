@@ -31,6 +31,7 @@ func _ready():
 func _process(delta):
 	$Canvas/AmmoLabel.text = 'Deliveries Available: %s' % GameController.get_ammo()
 	$Canvas/SupremeLabel.text = '"%s"' % GameController.get_leader_message()
+	$Canvas/SupremeLeader.texture = GameController.get_leader_image()
 
 	if Input.is_action_just_pressed('ui_select'):
 		var worked = GameController.decrease_ammo()
