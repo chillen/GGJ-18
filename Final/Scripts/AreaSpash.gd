@@ -2,7 +2,7 @@ extends Area2D
 
 export(String) var group_1 = "player"
 export(String) var group_2 = "splash"
-var splatter_class = preload('res://Scenes/Splatter.tscn')
+var splatter_class = preload('res://Scenes/SplatterII.tscn')
 
 signal splash
 

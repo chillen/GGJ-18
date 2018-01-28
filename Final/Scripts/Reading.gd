@@ -24,6 +24,7 @@ func _start_timer():
 func _end_timer():
 	self.timer.stop()
 	$CanvasLayer/UI.visible = true
+	self.visible = false
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.

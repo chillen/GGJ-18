@@ -42,6 +42,8 @@ var leader_sprites = {
 }
 var current_leader_image = 'neutral'
 var level_timer = null
+var audio_streamer = null
+
 
 var package_locations = []
 var completed_missions = []
@@ -52,6 +54,7 @@ func _ready():
 #	print('hi')
 	change_state(START_TITLE, 'title_state')
 	set_process(true)
+	
 	
 func _process(delta):
 	active_state_process.call_func()
