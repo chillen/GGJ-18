@@ -148,7 +148,7 @@ func _end_timeout():
 	
 func flying_state():
 	if active_state == START_FLYING:
-		goto_scene("res://Scenes/Map/Map.tscn")
+		goto_scene("res://Scenes/Map.tscn")
 		self.active_state = FLYING
 		self.ammo = 7
 	
