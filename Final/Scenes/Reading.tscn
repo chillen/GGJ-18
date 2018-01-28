@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Reading.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/snowstorm/Snowstorm.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scenes/BlackFader.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/NewPaper.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -12,7 +13,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Reading" type="Node2D"]
+[node name="Reading" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -65,5 +66,17 @@ _sections_unfolded = [ "custom_fonts" ]
 [node name="BlackFader" parent="CanvasLayer" index="2" instance=ExtResource( 3 )]
 
 start_black = true
+
+[node name="UI" parent="CanvasLayer" index="3" instance=ExtResource( 4 )]
+
+rect_scale = Vector2( 2, 2 )
+_sections_unfolded = [ "Anchor", "Rect" ]
+
+[node name="Timer" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
 
 
