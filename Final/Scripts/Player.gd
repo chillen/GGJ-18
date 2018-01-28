@@ -6,6 +6,8 @@ var base_speed = 0.1
 var max_turn_speed = 0.08
 var player_velocity = Vector2(0, 0)
 
+var map_size
+
 export(float,0,10,0.5) var temp_speed = 5
 var max_box = {}
 var flapping = true
@@ -67,6 +69,5 @@ func _physics_process(delta):
 	self.position.x += player_velocity.x
 	self.position.y += player_velocity.y
 	
-	if (self.position.x < -2900 or self.position.x > 2900 or self.position.y < -1900 or self.position.y > 1900):
-		self.position.x -= (cos(self.rotation - 1.57) * 4) * velocity_multiplier * delta
-		self.position.y -= (sin(self.rotation - 1.57) * 4) * velocity_multiplier * delta
+	if (abs(self.position.x) > map_size.x / 2 - 300 or abs(self.position.y) > map_size.y / 2 - 300):
+		self.rotation += PI
