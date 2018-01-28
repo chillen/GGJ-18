@@ -21,15 +21,18 @@ var completed_missions = []
 
 var night_texts = [
 [
-    {'header': 'TERROR', 'text': 'sometext'},
-    {'header': 'TERROR', 'text': 'sometext'},
-    {'header': 'TERROR', 'text': 'sometext'}
+    {'header': 'BORDER TENSIONS DROPPING', 'text': 'As stocks grow, local corporations offer aid and support to our neighbours in the north west. Surely this wouldn\t have been possible if not for the support of big company ....'},
+    {'header': 'NEW BRIDGE FUELING THE ECONOMY', 'text': 'After years of wasting fuel, time, and employee wages making our way around the canal, the new bridge is a marketing marvel, connecting villages in western...'}
 ],
 
 [
-    {'header': 'TERROR', 'text': 'sometext'},
-    {'header': 'TERROR', 'text': 'sometext'},
-    {'header': 'TERROR', 'text': 'sometext'}
+    {'header': 'SOUTHWEST WATERFRONT PROPERTY PRICES SOAR', 'text': 'The beauty of the south east coral has attracted high class business people from all around. If we weren\'t supposed to drain it dry, why would it be so prett..'},
+    {'header': 'FOUNTAIN SHOWS THE POWER OF MONEY', 'text': '[REDACTED] has wowed us all, spending 0.01% of his fortune on a wonderful golden fountain. While normally a gathering place of flying rats, [REDACTED] has taken measures to...'}
+],
+[
+    {'header': 'WHY ALL THE BIRDS?', 'text': 'Recent increases in uniformly cooing birds frightening specialists. They fear the gatherings of likeminded feather rodents meeting at what they dub, "The Neck of the Sparrow" in the north east of our grea...'},
+    {'header': 'STRIKING OIL!', 'text': 'Oil found north of the newly dubbed, "Lake Barren", formally a disgusting overgrowth of expensive coral. Found by island visitors from the northern islands of ...'},
+    {'header': 'DEMOCRATIC PARTY LEADER TO GIVE STATE OF THE UNION ADDRESS', 'text': 'Democratic party leader to give state of the union address from her resort at the [REDACTED] islands, west of Lake Barren'}
 ]
 ]
 

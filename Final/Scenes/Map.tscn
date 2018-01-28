@@ -197,6 +197,7 @@ _sections_unfolded = [ "Material", "Rect", "Visibility" ]
 
 [node name="BlackFaderAll" parent="Canvas" index="6" instance=ExtResource( 7 )]
 
+position = Vector2( -4.08105, -183.651 )
 start_black = true
 
 
