@@ -1,18 +1,34 @@
 extends Node
 
 var day_missions = [[
-    {'x': -10, 'y': -395,
-    'icon': preload('res://Assets/FountainIcon.png')
-    },
-    {'x': 0, 'y': 0,
+#Day 1
+    {'x': -1170, 'y': 0,
     'icon': preload('res://Assets/ParkBenchIcon.png')
     }],
-
+#Day 2
+	[{'x': -600, 'y': -530,
+    'icon': preload('res://Assets/FountainIcon.png')
+    },
+	{'x': -55, 'y': -763,
+    'icon': preload('res://Assets/FountainIcon.png')
+    }],
+#Day 3
     [
-    {'x': 0, 'y': 0,
+    {'x': -450, 'y': 300,
     'icon': preload('res://Assets/ParkBenchIcon.png')
     },
-    {'x': 0, 'y': 0,
+    {'x': 270, 'y': 700,
+    'icon': preload('res://Assets/ParkBenchIcon.png')
+    }],
+#Day 4
+ 	[
+    {'x': 150, 'y': 0,
+    'icon': preload('res://Assets/ParkBenchIcon.png')
+    },
+    {'x': 1500, 'y': 0,
+    'icon': preload('res://Assets/ParkBenchIcon.png')
+    },
+    {'x': 1500, 'y': -600,
     'icon': preload('res://Assets/ParkBenchIcon.png')
     }]
 ]
@@ -22,8 +38,6 @@ var completed_missions = []
 var night_texts = [
 [
     {'header': 'TERROR', 'text': 'sometext'},
-    {'header': 'TERROR', 'text': 'sometext'},
-    {'header': 'TERROR', 'text': 'sometext'}
 ],
 
 [
