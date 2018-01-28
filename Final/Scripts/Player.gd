@@ -27,11 +27,11 @@ func _ready():
 	$Camera.limit_right = self.max_box.maxx*3
 	$Camera.limit_bottom = self.max_box.maxy*3
 
-func _process(delta):
+func _physics_process(delta):
 	if turn_velocity > 0:
-		turn_velocity -= min(0.4 * delta, turn_velocity)
+		turn_velocity -= min(0.4 * delta, turn_velocity * delta * 60)
 	elif turn_velocity < 0:
-		turn_velocity += min(0.4 * delta, turn_velocity * -1)
+		turn_velocity += min(0.4 * delta, turn_velocity * -1 * delta * 60)
 		
 	if Input.is_action_pressed("ui_a"):
 		turn_velocity -= 1.4 * delta
@@ -43,7 +43,7 @@ func _process(delta):
 	elif turn_velocity < -max_turn_speed:
 		turn_velocity = -max_turn_speed
 		
-	velocity_multiplier = 1 + (1 * (pow(abs(turn_velocity * 3), 1)))
+	velocity_multiplier = (1 + (1 * (pow(abs(turn_velocity * 3), 1)))) * delta * 60
 	
 	self.rotation += turn_velocity
 	
