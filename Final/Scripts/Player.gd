@@ -13,8 +13,8 @@ var max_box = {}
 var flapping = true
 
 func _ready():
-	self.position.x = 800
-	self.position.y = 800
+	self.position.x = -1200
+	self.position.y = 700
 	self.add_to_group('player')
 	var topleft = get_parent().get_node('Mapmap').get_node('Topleft')
 	var bottomright = get_parent().get_node('Mapmap').get_node('Bottomright')
@@ -69,5 +69,5 @@ func _physics_process(delta):
 	self.position.x += player_velocity.x
 	self.position.y += player_velocity.y
 	
-	if (abs(self.position.x) > map_size.x / 2 - 300 or abs(self.position.y) > map_size.y / 2 - 300):
+	if (abs(self.position.x) > map_size.x / 2 - 800 or abs(self.position.y) > map_size.y / 2 - 450):
 		self.rotation += PI
