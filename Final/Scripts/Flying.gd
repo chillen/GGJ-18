@@ -12,6 +12,8 @@ var package_class = preload('res://Scenes/ThePackage.tscn')
 var timer = null
 
 func _ready():
+	$Player.map_size = get_node('Mapmap').texture.get_size() * get_node('Mapmap').transform.get_scale()
+	
 	# Called every time the node is added to the scene.
 	# Initialization here
 	self.missions = MissionData.get_todays_missions()
