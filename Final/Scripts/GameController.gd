@@ -11,8 +11,8 @@ var paper_data = [
 ]
 
 var leader_messages = {
-	'splash': 'Here birdrov! Drop the package!',
-	'safe': 'The delivery is indeed near, birdrov, but do not stray away',
+	'splash': '',
+	'safe': '',
 	'danger': 'Turn back, birdrov, there is no friends there',
 	'failed': 'I am disappointed you have strayed, birdov',
 	'tut1': 'Press <SPACE> to deliver the first package, birdrov'

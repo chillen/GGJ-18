@@ -21,7 +21,7 @@ func _ready():
 #		var location = mission_data.mission.loc
 #
 #		var point = point_class.instance()
-#		point.set_data(title, location, preload('res://Assets/ParkBenchIcon.png'))
+#		point.set_data(title, id, location, preload('res://Assets/ParkBenchIcon.png'))
 #		add_child(point)
 #		move_child(point, 2)
 	move_child($Points, 2)
@@ -30,9 +30,16 @@ func _ready():
 	
 func _process(delta):
 	$Canvas/AmmoLabel.text = 'Deliveries Available: %s' % GameController.get_ammo()
-	$Canvas/SupremeLabel.text = '"%s"' % GameController.get_leader_message()	
 	$Canvas/TimerLabel.text = 'Till Dusk: %02ds' % GameController.get_level_time()
 	$Canvas/SupremeLeader.texture = GameController.get_leader_image()
+	
+	if GameController.get_leader_message():
+		$Canvas/SupremeLabel.text = '"%s"' % GameController.get_leader_message()
+		$Canvas/ColorRect.visible = true	
+	else:
+		$Canvas/SupremeLabel.text = ''
+		$Canvas/ColorRect.visible = false	
+	
 
 	if Input.is_action_just_pressed('ui_select'):
 		var worked = GameController.decrease_ammo()

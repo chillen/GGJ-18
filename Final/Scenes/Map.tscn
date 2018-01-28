@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Flying.gd" type="Script" id=1]
 [ext_resource path="res://Assets/MapBeige.png" type="Texture" id=2]
@@ -6,7 +6,8 @@
 [ext_resource path="res://Scenes/AffiliationTemplate.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Fonts/Pixeled.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://Assets/StalinPidgeon_Neutral.png" type="Texture" id=7]
+[ext_resource path="res://Fonts/snowstorm/Snowstorm.otf" type="DynamicFontData" id=7]
+[ext_resource path="res://Assets/StalinPidgeon_Neutral.png" type="Texture" id=8]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -24,13 +25,13 @@ _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=3]
 
-size = 18
+size = 64
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 6 )
+font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Root" type="Node"]
+[node name="Root" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -89,9 +90,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 833.0
-margin_top = 116.0
+margin_top = 800.0
 margin_right = 1751.0
-margin_bottom = 340.0
+margin_bottom = 1024.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -105,10 +106,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1536.0
-margin_top = 992.0
-margin_right = 1853.0
-margin_bottom = 1043.0
+margin_left = 1502.0
+margin_top = 3.0
+margin_right = 1819.0
+margin_bottom = 54.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
 mouse_default_cursor_shape = 0
@@ -129,10 +130,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1536.0
-margin_top = 947.0
-margin_right = 1853.0
-margin_bottom = 998.0
+margin_left = 1090.0
+margin_top = 3.0
+margin_right = 1407.0
+margin_bottom = 54.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
 mouse_default_cursor_shape = 0
@@ -154,9 +155,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 914.0
-margin_top = 125.0
+margin_top = 809.0
 margin_right = 1554.0
-margin_bottom = 325.0
+margin_bottom = 1009.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
 mouse_default_cursor_shape = 0
@@ -164,8 +165,9 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.917969, 0.917969, 0.917969, 0.781451 )
-text = "..."
+text = "Death to lorem ipsum, birdrov!"
 align = 2
+valign = 1
 autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
@@ -179,15 +181,15 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 1584.0
-margin_top = -1.0
+margin_top = 683.0
 margin_right = 2057.0
-margin_bottom = 613.0
+margin_bottom = 1297.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 stretch_mode = 0
 _sections_unfolded = [ "Material", "Rect", "Visibility" ]
 
