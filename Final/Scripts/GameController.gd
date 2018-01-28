@@ -126,7 +126,6 @@ func get_leader_image():
 	return leader_sprites[current_leader_image]
 
 func update_leader_message():
-	print(current_scene)
 	if zone_counts['splash'] > 0:
 		current_leader_message = 'splash'
 		current_leader_image = 'kawaii'
