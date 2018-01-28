@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/AffiliationTemplate.gd" type="Script" id=1]
 [ext_resource path="res://Assets/FountainIcon.png" type="Texture" id=2]
-[ext_resource path="res://Scripts/AreaDanger.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/AreaSpash.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/AreaDanger.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/AreaSafe.gd" type="Script" id=5]
 
 [sub_resource type="CanvasItemMaterial" id=4]
 
@@ -15,17 +17,17 @@ light_mode = 2
 custom_solver_bias = 0.0
 radius = 28.1235
 
-[sub_resource type="CircleShape2D" id=2]
-
-custom_solver_bias = 0.0
-radius = 214.261
-
 [sub_resource type="CircleShape2D" id=3]
 
 custom_solver_bias = 0.0
 radius = 446.069
 
-[node name="Affiliation" type="Node2D"]
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 214.261
+
+[node name="Affiliation" type="Node2D" index="0"]
 
 scale = Vector2( 3, 3 )
 script = ExtResource( 1 )
@@ -52,38 +54,14 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 3 )
-group = "splash"
+group = "player"
 
 [node name="Collider" type="CollisionShape2D" parent="Splash/Area" index="0"]
 
 position = Vector2( -0.291992, 2.6279 )
 shape = SubResource( 1 )
 
-[node name="Safe" type="Node2D" parent="." index="2"]
-
-scale = Vector2( 2, 2 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Area" type="Area2D" parent="Safe" index="0"]
-
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 3 )
-group = "player"
-
-[node name="Collider" type="CollisionShape2D" parent="Safe/Area" index="0"]
-
-position = Vector2( -0.652577, 2.72154 )
-scale = Vector2( 1.06752, 1.03248 )
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Danger" type="Node2D" parent="." index="3"]
+[node name="Danger" type="Node2D" parent="." index="2"]
 
 scale = Vector2( 4, 4 )
 _sections_unfolded = [ "Transform" ]
@@ -97,7 +75,8 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 3 )
+script = ExtResource( 4 )
+_sections_unfolded = [ "Collision" ]
 group = "player"
 
 [node name="Collider" type="CollisionShape2D" parent="Danger/Area" index="0"]
@@ -107,16 +86,42 @@ scale = Vector2( 0.961836, 0.945625 )
 shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="Safe" type="Node2D" parent="." index="3"]
+
+scale = Vector2( 2, 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area" type="Area2D" parent="Safe" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 5 )
+_sections_unfolded = [ "Audio Bus", "Collision" ]
+group = "player"
+
+[node name="Collider" type="CollisionShape2D" parent="Safe/Area" index="0"]
+
+position = Vector2( -0.652577, 2.72154 )
+scale = Vector2( 1.06752, 1.03248 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
 [connection signal="body_entered" from="Splash/Area" to="Splash/Area" method="_on_Area_body_entered"]
 
 [connection signal="body_exited" from="Splash/Area" to="Splash/Area" method="_on_Area_body_exited"]
 
-[connection signal="body_entered" from="Safe/Area" to="Safe/Area" method="_on_Area_body_entered"]
-
-[connection signal="body_exited" from="Safe/Area" to="Safe/Area" method="_on_Area_body_exited"]
-
 [connection signal="body_entered" from="Danger/Area" to="Danger/Area" method="_on_Area_body_entered"]
 
 [connection signal="body_exited" from="Danger/Area" to="Danger/Area" method="_on_Area_body_exited"]
+
+[connection signal="body_entered" from="Safe/Area" to="Safe/Area" method="_on_Area_body_entered"]
+
+[connection signal="body_exited" from="Safe/Area" to="Safe/Area" method="_on_Area_body_exited"]
 
 
