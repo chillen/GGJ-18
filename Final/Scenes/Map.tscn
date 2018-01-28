@@ -30,7 +30,7 @@ use_filter = false
 font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Root" type="Node" index="0"]
+[node name="Root" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -117,12 +117,37 @@ size_flags_vertical = 4
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Ammunition Remaining"
+align = 2
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "custom_colors", "custom_fonts" ]
 
-[node name="SupremeLabel" type="Label" parent="Canvas" index="2"]
+[node name="TimerLabel" type="Label" parent="Canvas" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1536.0
+margin_top = 947.0
+margin_right = 1853.0
+margin_bottom = 998.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Time Remaining"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "custom_colors", "custom_fonts" ]
+
+[node name="SupremeLabel" type="Label" parent="Canvas" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -147,7 +172,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
 
-[node name="SupremeLeader" type="TextureRect" parent="Canvas" index="3"]
+[node name="SupremeLeader" type="TextureRect" parent="Canvas" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0

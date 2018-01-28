@@ -39,6 +39,7 @@ var leader_sprites = {
 	'neutral': preload('res://Assets/StalinPidgeon_Neutral.png')
 }
 var current_leader_image = 'neutral'
+var level_timer = null
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -144,6 +145,9 @@ func increase_zone(zone):
 
 func decrease_zone(zone):
 	self.zone_counts[zone] -= 1
+	
+func get_level_time():
+	return self.level_timer.time_left
 
 #############################################################################
 ## 	STATES
@@ -186,12 +190,24 @@ func _end_timeout():
 	change_state(START_FLYING, 'flying_state')
 	self.timer.stop()
 	
+func _end_level():
+	self.level_timer.stop()
+	print('Level over')
+	
 func flying_state():
 	if active_state == START_FLYING:
 		goto_scene("res://Scenes/Map.tscn")
 		self.active_state = FLYING
 		self.ammo = 7
+		self.level_timer = Timer.new()
+		self.level_timer.connect("timeout",self,"_end_level") 
+		add_child(self.level_timer)
+		self.level_timer.wait_time = 10
+		self.level_timer.start()
 	update_leader_message()
+	if self.ammo == 0:
+		_end_level()
+
 	
 func reading_state():
 	return
