@@ -56,21 +56,21 @@ func renew_papers():
 func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
-	
-	if Input.is_action_just_pressed('ui_right'):
-		print("right")
-		active_paper += 1
-		if active_paper < len(texts):
-			renew_papers()
-		pass
-		#next_paper()
-	if Input.is_action_just_pressed('ui_left'):
-		print('left')
-		pass
-		#prev_paper()
-	if active_paper == len(texts):
-		print('loop condition')
-		GameController.done_reading()
+	if self.visible == true:
+		if Input.is_action_just_pressed('ui_right'):
+			print("right")
+			active_paper += 1
+			if active_paper < len(texts):
+				renew_papers()
+			pass
+			#next_paper()
+		if Input.is_action_just_pressed('ui_left'):
+			print('left')
+			pass
+			#prev_paper()
+		if active_paper == len(texts):
+			print('loop condition')
+			GameController.done_reading()
 		
 		
 	
