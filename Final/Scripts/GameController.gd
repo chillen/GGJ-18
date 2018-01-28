@@ -99,7 +99,11 @@ func get_ammo():
 	return self.ammo
 	
 func decrease_ammo():
+	if self.ammo == 0:
+		return false
 	self.ammo -= 1
+	return true
+	
 	
 #############################################################################
 ## 	STATES
