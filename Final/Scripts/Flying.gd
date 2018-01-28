@@ -14,16 +14,16 @@ func _ready():
 	# Initialization here
 	self.missions = GameController.get_papers()
 	
-	for index in missions:
-		var mission_data = GameController.get_paper(index)
-		var title = mission_data.text.title
-		var location = mission_data.mission.loc
-
-		var point = point_class.instance()
-		point.set_data(title, location, preload('res://Assets/ParkBenchIcon.png'))
-		add_child(point)
-		move_child(point, 2)
-		
+#	for index in missions:
+#		var mission_data = GameController.get_paper(index)
+#		var title = mission_data.text.title
+#		var location = mission_data.mission.loc
+#
+#		var point = point_class.instance()
+#		point.set_data(title, location, preload('res://Assets/ParkBenchIcon.png'))
+#		add_child(point)
+#		move_child(point, 2)
+	move_child($Points, 2)
 	set_process(true)	
 	
 	

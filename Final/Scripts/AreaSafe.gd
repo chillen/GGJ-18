@@ -8,7 +8,7 @@ signal safe_leave
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	GameController.some_function(signal_name,self)
+#	GameController.some_function(signal_name,self)
 	pass
 
 #func _process(delta):
