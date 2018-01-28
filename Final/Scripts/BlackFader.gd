@@ -13,11 +13,17 @@ func _ready():
 		$BlackScreen.color = '#000000'
 	pass
 	
-func fadeIn():
-	$AnimationPlayer.play('fadeIn')
+func fadeIn(speed='fast'):
+	if speed=='fast':
+		$AnimationPlayer.play('fadeIn')
+	if speed=='slow':
+		$AnimationPlayer.play('fadeIn', -1, .3)
 	
-func fadeOut():
-	$AnimationPlayer.play('fadeOut')
+func fadeOut(speed='fast'):
+	if speed=='fast':
+		$AnimationPlayer.play('fadeOut')
+	if speed=='slow':
+		$AnimationPlayer.play('fadeOut', -1, .3)
 
 
 #func _process(delta):

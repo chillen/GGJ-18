@@ -20,7 +20,7 @@ var leader_messages = {
 	'tut1': 'Press <SPACE> to deliver the first package, birdrov'
 }
 
-enum STATES {START_DAY, DAY, START_TITLE, TITLE, STOP_TITLE, START_FLYING,FLYING,END_FLYING, START_READING, READING, END_READING, START_MISSIONS, MISSIONS, END_MISSION, START_WAYPOINT, WAYPOINT, END_WAYPOINT}
+enum STATES {START_ENDING, ENDING, END_ENDING, START_DAY, DAY, START_TITLE, TITLE, STOP_TITLE, START_FLYING,FLYING,END_FLYING, START_READING, READING, END_READING, START_MISSIONS, MISSIONS, END_MISSION, START_WAYPOINT, WAYPOINT, END_WAYPOINT}
 var selected_paper = 0	
 var on_continue = false
 var active_state_process = null
@@ -30,7 +30,6 @@ var selected_missions = [false, false]
 var mission_performance = {}
 var performance_history = []
 var current_scene = null
-var days_remaining = 7
 var timer = null
 var ammo = 7
 var current_leader_message = 'tut1'
@@ -49,7 +48,6 @@ var completed_missions = []
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-#	print('hi')
 	change_state(START_TITLE, 'title_state')
 	set_process(true)
 	
@@ -111,6 +109,7 @@ func start_game():
 	change_state(START_DAY, 'day_state')
 	
 func days_remaining_text():
+	var days_remaining = (len(MissionData.day_missions) - MissionData.current_day)
 	if days_remaining == 0:
 		return "The final day"
 	else:
@@ -158,7 +157,7 @@ func add_package_location(location):
 	package_locations.append(location)
 	
 func complete_mission(id):
-	completed_missions.append(id)
+	MissionData.completed_missions.append(id)
 
 #############################################################################
 ## 	STATES
@@ -237,3 +236,13 @@ func planning_state():
 	
 func waypoint_state():
 	return
+	
+func game_over():
+	print('GAME IS OVER!')
+	change_state(START_ENDING, 'ending_state')
+
+func ending_state():
+	if active_state == START_ENDING:
+		goto_scene("res://Scenes/Ending.tscn")
+		self.active_state = ENDING
+	MissionData.end()
