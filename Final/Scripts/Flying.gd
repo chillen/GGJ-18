@@ -28,7 +28,7 @@ func _ready():
 	
 	
 func _process(delta):
-	$Canvas/Label.text = 'Deliveries Available: %s' % GameController.get_ammo()
+	$Canvas/AmmoLabel.text = 'Deliveries Available: %s' % GameController.get_ammo()
 	if Input.is_action_just_pressed('ui_select'):
 		var worked = GameController.decrease_ammo()
 		if worked:
