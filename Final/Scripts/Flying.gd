@@ -7,7 +7,7 @@ extends Node
 var missions = []
 var mission_nodes = []
 var point_class = preload('res://Scenes/Point.tscn')
-var splatter_class = preload('res://Scenes/Map/Splatter.tscn')
+var splatter_class = preload('res://Scenes/Splatter.tscn')
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -20,7 +20,7 @@ func _ready():
 		var location = mission_data.mission.loc
 
 		var point = point_class.instance()
-		point.set_data(title, location, preload('res://Scenes/White.png'))
+		point.set_data(title, location, preload('res://Assets/ParkBenchIcon.png'))
 		add_child(point)
 		move_child(point, 3)
 		
