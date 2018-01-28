@@ -16,7 +16,6 @@ func _ready():
 	pass
 
 func _process(delta):
-	print(self.position)
 	self.position += velocity*delta*scalar
 
 #func _process(delta):
