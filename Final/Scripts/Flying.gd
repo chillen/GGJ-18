@@ -26,7 +26,11 @@ func _ready():
 #		move_child(point, 2)
 	move_child($Points, 2)
 	set_process(true)	
+	GameController.connect('end_level', self, '_end_level')
 	
+func _end_level():
+	print('Fade please')
+	$Canvas/BlackFader.fadeOut()
 	
 func _process(delta):
 	$Canvas/AmmoLabel.text = 'Deliveries Available: %s' % GameController.get_ammo()

@@ -4,6 +4,8 @@ extends Node2D
 # var a = 2
 # var b = "textvar"
 
+signal end_level
+
 var paper_data = [
 	{'text': {'title': 'BIRD FLU EPIDEMIC', 'content': 'Doctors still unsure...'}, 'mission': { 'loc': [50, 900], 'stats': {'suspicion': .8, 'support': .1, 'unrest': .9 }}},
 	{'text': {'title': 'IS LOREM IPSUM ON ITS WAY OUT?', 'content': 'More at 11...'}, 'mission': { 'loc': [100, 200], 'stats': {'suspicion': .5, 'support': .3, 'unrest': .4 } } },
@@ -192,6 +194,7 @@ func _end_timeout():
 	
 func _end_level():
 	self.level_timer.stop()
+	emit_signal('end_level')
 	print('Level over')
 	
 func flying_state():

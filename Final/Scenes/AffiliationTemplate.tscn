@@ -6,13 +6,13 @@
 [ext_resource path="res://Scripts/AreaDanger.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/AreaSafe.gd" type="Script" id=5]
 
-[sub_resource type="CanvasItemMaterial" id=1]
+[sub_resource type="CanvasItemMaterial" id=4]
 
 render_priority = 0
 blend_mode = 0
 light_mode = 2
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 28.1235
@@ -22,12 +22,12 @@ radius = 28.1235
 custom_solver_bias = 0.0
 radius = 446.069
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
 radius = 214.261
 
-[node name="Affiliation" type="Node2D" index="0"]
+[node name="Affiliation" type="Node2D"]
 
 scale = Vector2( 3, 3 )
 script = ExtResource( 1 )
@@ -36,7 +36,7 @@ missionId = null
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-material = SubResource( 1 )
+material = SubResource( 4 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Material", "Transform" ]
 
@@ -55,14 +55,13 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
 group_1 = "player"
 group_2 = "splash"
 
 [node name="Collider" type="CollisionShape2D" parent="Splash/Area" index="0"]
 
 position = Vector2( -0.291992, 2.6279 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Danger" type="Node2D" parent="." index="2"]
 
@@ -112,7 +111,7 @@ group = "player"
 
 position = Vector2( -0.652577, 2.72154 )
 scale = Vector2( 1.06752, 1.03248 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [connection signal="body_entered" from="Splash/Area" to="Splash/Area" method="_on_Area_body_entered"]
