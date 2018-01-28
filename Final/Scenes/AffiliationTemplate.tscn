@@ -29,7 +29,6 @@ radius = 214.261
 
 [node name="Affiliation" type="Node2D"]
 
-scale = Vector2( 3, 3 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 mission_id = null
