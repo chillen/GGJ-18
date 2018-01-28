@@ -30,7 +30,7 @@ use_filter = false
 font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Root" type="Node"]
+[node name="Root" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -59,6 +59,7 @@ _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="Points" type="Node2D" parent="." index="2"]
 
+editor/display_folded = true
 position = Vector2( 961.773, 544.044 )
 scale = Vector2( 0.5, 0.5 )
 
@@ -75,7 +76,6 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 
 [node name="Canvas" type="CanvasLayer" parent="." index="4"]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -147,7 +147,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
 
-[node name="TextureRect" type="TextureRect" parent="Canvas" index="2"]
+[node name="SupremeLeader" type="TextureRect" parent="Canvas" index="2"]
 
 modulate = Color( 1, 1, 1, 0.549686 )
 anchor_left = 0.0
