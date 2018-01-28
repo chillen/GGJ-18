@@ -137,7 +137,7 @@ func day_state():
 		self.active_state = DAY
 
 		self.timer = Timer.new()
-		timer.wait_time = 3
+		timer.wait_time = 1
 		timer.connect("timeout",self,"_end_timeout") 
 		add_child(timer) #to process
 		timer.start() #to start
