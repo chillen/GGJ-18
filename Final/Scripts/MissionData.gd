@@ -43,7 +43,7 @@ var night_texts = [
 
 [
     {'header': 'SOUTHWEST WATERFRONT PROPERTY PRICES SOAR', 'text': 'The beauty of the south east coral has attracted high class business people from all around. If we weren\'t supposed to drain it dry, why would it be so prett..'},
-    {'header': 'FOUNTAIN SHOWS THE POWER OF MONEY', 'text': '[REDACTED] has wowed us all, spending 0.01% of his fortune on a wonderful golden fountain. While normally a gathering place of flying rats, [REDACTED] has taken measures to...'}
+    {'header': 'FOUNTAIN SHOWS THE POWER OF MONEY', 'text': '[REDACTED] has wowed us all, spending 0.01% of his fortune on a wonderful golden fountain. "A shame not all waterfront propery can have beautiful coral like those southeners", he said in an interview on his 24 karat fountain. While normally a gathering place of flying rats, [REDACTED] has taken measures to...'}
 ],
 [
     {'header': 'WHY ALL THE BIRDS?', 'text': 'Recent increases in uniformly cooing birds frightening specialists. They fear the gatherings of likeminded feather rodents meeting at what they dub, "The Neck of the Sparrow" in the north east of our grea...'},
