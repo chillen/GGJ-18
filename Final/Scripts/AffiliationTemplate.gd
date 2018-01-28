@@ -1,5 +1,6 @@
 extends Node2D
 
+export(int) var missionId
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
