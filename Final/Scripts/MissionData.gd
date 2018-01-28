@@ -37,7 +37,7 @@ var completed_missions = []
 
 var night_texts = [
 [
-    {'header': 'BORDER TENSIONS DROPPING', 'text': 'As stocks grow, local corporations offer aid and support to our neighbours in the north west. Surely this wouldn\t have been possible if not for the support of big company ....'},
+    {'header': 'BORDER TENSIONS DROPPING', 'text': 'As stocks grow, local corporations offer aid and support to our neighbours in the north west. Surely this wouldn\'t have been possible if not for the support of "big company" fishem and dishem, located along the wonderfully stocked up canal ....'},
     {'header': 'NEW BRIDGE FUELING THE ECONOMY', 'text': 'After years of wasting fuel, time, and employee wages making our way around the canal, the new bridge is a marketing marvel, connecting villages in western...'}
 ],
 
@@ -61,7 +61,7 @@ func _ready():
 
 func next_day():
 	current_day += 1
-	if current_day > len(night_texts) or current_day > len(day_missions):
+	if current_day > len(night_texts)+1 or current_day > len(day_missions):
 		var total_missions = 0
 		for day in day_missions:
 			total_missions += len(day)
