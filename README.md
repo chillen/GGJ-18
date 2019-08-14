@@ -17,3 +17,7 @@ maybe reference old locations, but by the time we got the core gameplay written 
 
 Still! It was one of our early projects in Godot, our first time working with an amazing animator, and I'm pretty happy with 
 the result. It's very rough, not very fun, and needs a massive content overhaul, but it's not shabby for 48 hours or so.
+
+<img src="https://github.com/chillen/GGJ-18/blob/master/ScreenshotNews.PNG" width="480"/>
+<img src="https://github.com/chillen/GGJ-18/blob/master/ScreenshotKawaii.PNG" width="480"/>
+<img src="https://github.com/chillen/GGJ-18/blob/master/ScreenshotDelivery.PNG" width="480"/>
